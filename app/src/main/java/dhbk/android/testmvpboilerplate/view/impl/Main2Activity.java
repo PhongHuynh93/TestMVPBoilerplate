@@ -26,7 +26,14 @@ public final class Main2Activity extends BaseActivity<Main2Presenter, Main2View>
 
         // Your code here
         // Do not call mPresenter from here, it will be null! Wait for onStart or onPostCreate.
+
+        /**
+         * todo 14, we have PresenterFactory, so we can get the Main2Presenter
+         */
+//        Main2Presenter presenter = mPresenterFactory.create();
     }
+
+
 
     @Override
     protected void setupComponent(@NonNull AppComponent parentComponent) {

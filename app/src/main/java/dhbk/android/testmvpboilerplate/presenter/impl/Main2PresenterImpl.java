@@ -2,12 +2,15 @@ package dhbk.android.testmvpboilerplate.presenter.impl;
 
 import android.support.annotation.NonNull;
 
-import dhbk.android.testmvpboilerplate.presenter.Main2Presenter;
-import dhbk.android.testmvpboilerplate.view.Main2View;
-import dhbk.android.testmvpboilerplate.interactor.Main2Interactor;
-
 import javax.inject.Inject;
 
+import dhbk.android.testmvpboilerplate.interactor.Main2Interactor;
+import dhbk.android.testmvpboilerplate.presenter.Main2Presenter;
+import dhbk.android.testmvpboilerplate.view.Main2View;
+
+/**
+ * todo 6b - implement the presenter contract
+ */
 public final class Main2PresenterImpl extends BasePresenterImpl<Main2View> implements Main2Presenter {
     /**
      * The interactor
@@ -16,7 +19,6 @@ public final class Main2PresenterImpl extends BasePresenterImpl<Main2View> imple
     private final Main2Interactor mInteractor;
 
     // The view is available using the mView variable
-
     @Inject
     public Main2PresenterImpl(@NonNull Main2Interactor interactor) {
         mInteractor = interactor;

@@ -7,14 +7,14 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 
-import dhbk.android.testmvpboilerplate.App;
-import dhbk.android.testmvpboilerplate.presenter.loader.PresenterFactory;
-import dhbk.android.testmvpboilerplate.presenter.loader.PresenterLoader;
-import dhbk.android.testmvpboilerplate.injection.AppComponent;
-import dhbk.android.testmvpboilerplate.presenter.BasePresenter;
-
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import dhbk.android.testmvpboilerplate.App;
+import dhbk.android.testmvpboilerplate.injection.AppComponent;
+import dhbk.android.testmvpboilerplate.presenter.BasePresenter;
+import dhbk.android.testmvpboilerplate.presenter.loader.PresenterFactory;
+import dhbk.android.testmvpboilerplate.presenter.loader.PresenterLoader;
 
 public abstract class BaseActivity<P extends BasePresenter<V>, V> extends AppCompatActivity implements LoaderManager.LoaderCallbacks<P> {
     /**
@@ -53,9 +53,11 @@ public abstract class BaseActivity<P extends BasePresenter<V>, V> extends AppCom
 
         injectDependencies();
 
+        // todo 11 call the loader
         getSupportLoaderManager().initLoader(mUniqueLoaderIdentifier, null, this).startLoading();
     }
 
+    // todo 10 - inject the application component
     private void injectDependencies() {
         setupComponent(((App) getApplication()).getAppComponent());
     }
@@ -72,7 +74,7 @@ public abstract class BaseActivity<P extends BasePresenter<V>, V> extends AppCom
     }
 
     /**
-     * Call the presenter callbacks for onStart
+     * todo 12 Call the presenter callbacks for onStart, add the view to this
      */
     @SuppressWarnings("unchecked")
     private void doStart() {
@@ -85,6 +87,9 @@ public abstract class BaseActivity<P extends BasePresenter<V>, V> extends AppCom
         mFirstStart = false;
     }
 
+    /**
+     * todo 13 - detach the view, so we cannot update the view after getting datas with the reposition done.
+     */
     @Override
     protected void onStop() {
         if (mPresenter != null) {

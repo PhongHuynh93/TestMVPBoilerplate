@@ -2,6 +2,10 @@ package dhbk.android.testmvpboilerplate.presenter;
 
 import android.support.annotation.NonNull;
 
+/**
+ * todo 5 this is a base presenter that every present must implement  methods
+ * @param <V>
+ */
 public interface BasePresenter<V> {
     /**
      * Called when the view is attached to the presenter. Presenters should normally not use this

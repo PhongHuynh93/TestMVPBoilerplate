@@ -7,6 +7,9 @@ import dhbk.android.testmvpboilerplate.injection.AppComponent;
 import dhbk.android.testmvpboilerplate.injection.AppModule;
 import dhbk.android.testmvpboilerplate.injection.DaggerAppComponent;
 
+/**
+ * todo 1 - this is an application class, so add files here
+ */
 public final class App extends Application {
     private AppComponent mAppComponent;
 
